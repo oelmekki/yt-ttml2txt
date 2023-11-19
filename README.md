@@ -1,5 +1,8 @@
 # yt-ttml2txt
 
+> Note to Github users : development is happening on [Gitlab](https://gitlab.com/oelmekki/yt-ttml2txt),
+> please go there if you want to open issues or submit merge request.
+
 Converts a Youtube TTML subtitle file to a text file.
 
 ## Install
