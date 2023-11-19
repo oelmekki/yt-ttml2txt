@@ -1,6 +1,6 @@
 # yt-ttml2txt
 
-> Note to Github users : development is happening on [Gitlab](https://gitlab.com/oelmekki/yt-ttml2txt),
+> Note to GitHub users : development is happening on [GitLab](https://gitlab.com/oelmekki/yt-ttml2txt),
 > please go there if you want to open issues or submit merge request.
 
 Converts a Youtube TTML subtitle file to a text file.
@@ -37,9 +37,10 @@ into a full blown AST parser.
 
 ## Why?
 
-I wrote this to be able to dump text content for youtube videos and then
-grep then, providing local full text search for youtube videos I care
-about. Here is how I do it (you need [yt-dlp](https://github.com/yt-dlp/yt-dlp) for that):
+I wrote this to be able to dump text content for Youtube videos and then
+grep them, providing local full text search for Youtube videos I care
+about. Here is how I do it (you need [yt-dlp](https://github.com/yt-dlp/yt-dlp)
+or similar for that):
 
 ```
 yt-dlp --skip-download --write-auto-sub --sub-format ttml <youtube-video-url>
@@ -52,5 +53,5 @@ a few text files in storage.
 
 ## Credits
 
-This idea came after reading Jeff Atwood mentions
+This idea came after reading Jeff Atwood mention
 [his use of Youtube subtitles to access content](https://infosec.exchange/@codinghorror/111433268487559172).
