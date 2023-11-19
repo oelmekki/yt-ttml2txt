@@ -1,4 +1,4 @@
-PROG = ttml2txt
+PROG = yt-ttml2txt
 CC = gcc
 CFLAGS =
 PREFIX = /usr/local
