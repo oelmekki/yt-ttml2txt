@@ -4,6 +4,7 @@
 #include <stdlib.h>
 
 #define MAX_LINE_LEN 5000
+#define QUOTE_ENTITY_LEN 5
 bool ONE_LINER = false;
 
 /*
@@ -31,12 +32,17 @@ replace_quotes (char line[MAX_LINE_LEN])
   char modified_line[MAX_LINE_LEN] = {0};
 
   snprintf (modified_line, MAX_LINE_LEN - 1, "%s", line);
-  char *ptr = line;
+  char *read_ptr = line;
+  char *last_read = read_ptr;
+  char *write_ptr = modified_line;
 
-  while ((ptr = strstr (ptr, "&#39;")))
+  while ((read_ptr = strstr (read_ptr, "&#39;")))
     {
-      snprintf (modified_line + (ptr - line), MAX_LINE_LEN, "'%s", ptr + 5);
-      ptr += 5;
+      write_ptr += read_ptr - last_read;
+      read_ptr += QUOTE_ENTITY_LEN;
+      snprintf (write_ptr, MAX_LINE_LEN, "'%s", read_ptr);
+      write_ptr++;
+      last_read = read_ptr;
     }
 
   int wanna_write = snprintf (line, MAX_LINE_LEN - 1,  "%s", modified_line);
