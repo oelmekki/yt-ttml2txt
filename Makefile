@@ -1,5 +1,7 @@
 PROG = yt-ttml2txt
 CC = gcc
+KIK_DEV_CFLAGS = -std=c18 -D_POSIX_C_SOURCE=200809L -O0 -Wall -Wextra -Wpedantic -Wformat=2 -Werror -g3 -ggdb3 -fsanitize=undefined -fsanitize=address -fsanitize=pointer-compare
+KIK_PROD_CFLAGS = -std=c18 -D_POSIX_C_SOURCE=200809L -O2 -pipe -march=native
 CFLAGS =
 PREFIX = /usr/local
 FILES = $(wildcard *.c)
@@ -34,5 +36,3 @@ clean:
 
 analyze:
 	scan-build clang ${KIK_PROD_CFLAGS} ${CFLAGS} ${FILES} -o /dev/null ${LIBS}
-
-
